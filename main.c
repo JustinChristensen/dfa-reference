@@ -97,9 +97,8 @@ int main(int argc, char *argv[])
         current_state = transition(current_state, c);
 
         if (current_state == COMMENT_START) {
-            d = getc(stdin);
-
             previous_state = current_state;
+            d = getc(stdin);
             current_state = transition(current_state, d);
 
             if (!accepts(current_state)) {
